@@ -1,31 +1,53 @@
 
 import Link from 'next/link'
 import HeaderLink from './HeaderLink'
-import { NavLinks } from '@/app/_lib/constants'
 import MobilMenu from './MobilMenu'
 import DesktopThemeSwitcher from './DesktopThemeSwitcher'
-import LogoSVG from '@/app/_assets/LogoSVG'
+import { CartSVG } from '@/app/_assets/CartSVG'
+import HeartSVG from '@/app/_assets/HeartSVG'
 
 export default async function Header() {
 
   return (
     <header className="flex justify-between items-center px-6 sm:px-24 py-8 text-[var(--white)]">
 
-      <Link href={"/"} className="text-xl sm:text-xs 2xl:text-xl">
-        <LogoSVG className='size-7 text-[var(--color-primary)]' />
-      </Link>
+      <HeaderLink href={"/"}>
+        <span className='text-xl 2xl:text-2xl'>Alba Shop</span>
+        </HeaderLink>
 
-      <nav className='sm:flex space-x-4 hidden'>
-        {
-          NavLinks.map((link, i) => (
-            <HeaderLink key={i} href={link.href} text={link.text} />
-          ))
-        }
-        <DesktopThemeSwitcher />
-      </nav>
+      <DesktopMenu />
 
       <MobilMenu />
 
     </header>
+  )
+}
+
+const DesktopMenu = () => {
+  return (
+    <>
+      <nav className='sm:flex space-x-4 hidden'>
+        
+        <HeaderLink href={"/favorites"}>
+          <span>Favoritos</span>
+          <CartSVG className="size-7"/>
+        </HeaderLink>
+
+        <HeaderLink href={"/cart"}>
+        <span>Carrito</span>
+          <HeartSVG className="size-7"/>
+        </HeaderLink>
+       
+      </nav>
+
+      <nav className='sm:flex space-x-4 hidden'>
+
+        <HeaderLink href={"/about"}>
+          <span>Nosotros</span>
+        </HeaderLink>
+        
+        <DesktopThemeSwitcher />
+      </nav>
+    </>
   )
 }

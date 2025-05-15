@@ -3,7 +3,8 @@ import React from 'react'
 export default function Footer() {
   return (
     <footer className="flex flex-col-reverse sm:flex-row text-sm gap-4 justify-between items-center p-4 px-8 sm:px-24">
-      <p className='text-xs 2xl:text-base'>Copyright © {new Date().getFullYear()} - All right reserved by k@toDev</p>
+      <span className='text-xs 2xl:text-base'>Copyright © {new Date().getFullYear()}</span>
+      <span className='text-base 2xl:text-xl'>Alba Shop</span>
       <nav className="flex gap-4">
         <a>
           <svg
