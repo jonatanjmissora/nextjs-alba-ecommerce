@@ -9,7 +9,7 @@ import HeartSVG from '@/app/_assets/HeartSVG'
 export default async function Header() {
 
   return (
-    <header className="flex justify-between items-center px-6 sm:px-24 py-8 text-[var(--white)]">
+    <header className="flex justify-between items-center py-8 text-[var(--white)]">
 
       <HeaderLink href={"/"}>
         <span className='text-xl 2xl:text-2xl'>Alba Shop</span>
@@ -26,7 +26,7 @@ export default async function Header() {
 const DesktopMenu = () => {
   return (
     <>
-      <nav className='sm:flex space-x-4 hidden'>
+      <nav className='sm:flex space-x-8 hidden'>
         
         <HeaderLink href={"/favorites"}>
           <span>Favoritos</span>
@@ -40,7 +40,7 @@ const DesktopMenu = () => {
        
       </nav>
 
-      <nav className='sm:flex space-x-4 hidden'>
+      <nav className='sm:flex space-x-8 hidden'>
 
         <HeaderLink href={"/about"}>
           <span>Nosotros</span>

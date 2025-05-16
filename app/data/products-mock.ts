@@ -1,0 +1,38 @@
+export const PRODUCTS_MOCK = [
+    {
+        _id: 1,
+        title: "title-01",
+        category: "category-01",
+        description: "description-01",
+        image: "image-01",
+        price: "price-01",
+        stock: 1,
+        trend: true,
+        cart: false,
+        favorite: false,
+    },
+    {
+        _id: 2,
+        title: "title-02",
+        category: "category-02",
+        description: "description-02",
+        image: "image-02",
+        price: "price-02",
+        stock: 2,
+        trend: true,
+        cart: false,
+        favorite: false,
+    },
+    {
+        _id: 3,
+        title: "title-03",
+        category: "category-03",
+        description: "description-03",
+        image: "image-03",
+        price: "price-03",
+        stock: 3,
+        trend: true,
+        cart: false,
+        favorite: false,
+    }
+]
