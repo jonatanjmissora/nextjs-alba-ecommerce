@@ -19,7 +19,7 @@ export const PRODUCTS_MOCK = [
         image: "image-02",
         price: "price-02",
         stock: 2,
-        trend: true,
+        trend: false,
         cart: false,
         favorite: false,
     },

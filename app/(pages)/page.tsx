@@ -1,14 +1,11 @@
-import HomeProducts from "../_components/home/HomeProducts";
-import Novedades from "../_components/home/Novedades";
+import HomePage from "../_components/Home/Home-Page";
 
 export default async function page() {
 
   return (
-    <div className="flex-1 flex justify-center items-center mx-auto w-full ">
+    <div className="flex-1 flex flex-col justify-center items-center mx-auto w-full ">
       
-      <Novedades />
-
-      <HomeProducts />
+      <HomePage />
 
     </div>
   )

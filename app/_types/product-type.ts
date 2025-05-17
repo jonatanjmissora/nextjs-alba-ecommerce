@@ -1,4 +1,4 @@
-type CardType = {
+type ProductType = {
     _id: number;
     title: string;
     category: string;
