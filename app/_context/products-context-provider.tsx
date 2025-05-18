@@ -1,35 +1,28 @@
 'use client';
 
 import { createContext, ReactNode, useContext } from "react";
+import { getProducts } from "../_data/getProducts";
+import { transformToProductsObject } from "../_lib/utils/trasform-to-products-object";
+import { getTrendsFromProducts } from "../_lib/utils/get-trends-from-products";
 
-interface ProductType {
-    _id: number;
-    title: string;
-    category: string;
-    description: string;
-    image: string;
-    price: string;
-    stock: number;
-    trend: boolean;
-    cart: boolean;
-    favorite: boolean;
+type ProductContextType = {
+    productsObject: ProductObjectType;
+    productsTrends: ProductType[]
 }
 
-interface ProductsContextType {
-    products: ProductType[];
-}
+const ProductsContext = createContext<ProductContextType | null>(null);
 
-const ProductsContext = createContext<ProductsContextType | null>(null);
+const products = await getProducts()
+const productsObject = transformToProductsObject(products)
+const productsTrends = getTrendsFromProducts(products)
 
 export function ProductsContextProvider({
     children,
-    products
 }: {
     children: ReactNode;
-    products: ProductType[];
 }) {
     return (
-        <ProductsContext.Provider value={{ products }}>
+        <ProductsContext.Provider value={{productsObject, productsTrends}}>
             {children}
         </ProductsContext.Provider>
     );

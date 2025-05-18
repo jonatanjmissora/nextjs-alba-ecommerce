@@ -8,14 +8,13 @@ import { getNovedades } from "@/app/_data/getNovedades"
 
 export default function Novedades() {
 
-  const { products } = useProductsContext()
-  const novedades = getNovedades(products)
+  const { productsTrends } = useProductsContext()
 
   return (
     <CardsSlider title={"Novedades"}>
 
       {
-        novedades.map(novedad => <Card key={novedad._id} product={novedad} />)
+        productsTrends.map(novedad => <Card key={novedad._id} product={novedad} />)
       }
 
     </CardsSlider>

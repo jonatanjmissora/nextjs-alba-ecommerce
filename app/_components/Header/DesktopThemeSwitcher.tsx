@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useTheme } from 'next-themes'
@@ -18,7 +17,6 @@ const DesktopThemeSwitcher = () => {
         <SunSVG className="size-7 sm:size-5 2xl:size-7 sun-icon" />
         <MoonSVG className="size-7 p-1 sm:size-5 2xl:size-7 moon-icon" />
       </button>
-
     </>
   )
 }

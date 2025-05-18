@@ -23,7 +23,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const products = await getProducts()
+  
 
   return (
     <html lang="es" suppressHydrationWarning>
@@ -34,10 +34,10 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen body-layout">
             <Header />
-            <main className="flex-1 container mx-auto px-4 py-8">
-              <ProductsContextProvider products={products}>
+            <main className="flex-1 mx-auto py-8 w-full">
+              <ProductsContextProvider>
                 {children}
               </ProductsContextProvider>
             </main>

@@ -10,3 +10,11 @@ type ProductType = {
     cart: boolean;
     favorite: boolean;
 }
+
+type CategoryData = {
+    products: ProductType[];
+}
+
+type ProductObjectType = {
+    [key: string]: CategoryData;
+}

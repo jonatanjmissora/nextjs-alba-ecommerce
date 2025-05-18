@@ -9,7 +9,7 @@ export default function HeaderLink({ href, children }: { href: string, children:
   const pathname = usePathname()
 
   return (
-    <Link href={href} className={`btn flex justify-center items-center gap-3 text-xl sm:text-xs 2xl:text-xl  ${pathname === href ? "btn-ghost-active" : "text-[var(--foreground)] hover:text-[var(--color-primary-hover)]"}`}>
+    <Link href={href} className={`flex justify-center items-center gap-3 text-xl sm:text-base 2xl:text-xl hover:text-[var(--color-primary-hover)] ${pathname === href && "border-b-2 border-[var(--color-primary)]"} ${href === "/about" && "ml-auto"}`}>
       {children}
     </Link>
   )
